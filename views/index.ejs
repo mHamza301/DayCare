@@ -1,0 +1,420 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Survio Care</title>
+<link href="/assets/stylesheet.css" type="text/css" rel="stylesheet" media="all"/>
+<script src="https://kit.fontawesome.com/d0758d5e7d.js" crossorigin="anonymous"></script>
+<script src="/assets/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!--dropdown-user-->
+<script>
+$(document).ready(function(e) {
+    $('.users-new').click(function(e) {
+		e.stopPropagation();
+        $('.dropdown-users').slideToggle();
+    });
+	$(document).click( function(){
+        $('.dropdown-users').slideUp();
+    });
+});
+</script>
+<!--dropdown-user-->
+<!--page-loader-->
+<script>
+
+$(document).ready(function() {
+	$(window).load(function() {
+		setTimeout(function() {
+			$('#loader-wrapper').fadeOut();
+		}, 500);
+	})
+});
+</script>
+<!--page-loader-->
+<!--menu-dropdown-->
+<script>
+	$(document).ready(function(e) {
+        $('.menu li a').click(function(e) {
+			if(!$(this).next().is(":visible")){
+				$('.menu li ul').slideUp();
+				$(".menu li").removeClass('selected-menu-bg');
+				$(".menu li a").removeClass("minus");
+			}
+            $(this).next('ul').slideToggle();
+			$(this).parent('li').toggleClass('selected-menu-bg');
+			$(this).toggleClass("minus");
+        });
+    });
+</script>
+<!--menu-dropdown-->
+<script>
+	$(document).ready(function(e) {
+        $('.toggle_dropdown').click(function(e) {
+			$(this).next('.dashborad-table-area').slideToggle();
+        });
+    });
+</script>
+<!--contimator-->
+          <link href="/assets/countimator.wheel.css" type="text/css" rel="stylesheet"/>
+          <script src="/assets/handlebars.min.js" type="text/javascript"></script>
+          <script src="/assets/jquery.countimator.js" type="text/javascript"></script>
+          <script src="/assets/jquery.countimator.wheel.js" type="text/javascript"></script>
+          
+          <script data-example="examples">
+            $(function() {
+              $(".counter").countimator();
+            });
+          </script>
+      <!--contimator-->
+   <!--Responive tabs-->
+          <link href="/assets/responsive-tabs.css" type="text/css" rel="stylesheet"/>
+		  <script src="/assets/jquery.responsiveTabs.min.js" type="text/javascript"></script>
+          <script src="/assets/jquery.responsiveTabs.js" type="text/javascript"></script>
+          <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').responsiveTabs({
+                rotate: false,
+                startCollapsed: 'accordion',
+                collapsible: 'accordion',
+                setHash: false,
+            });
+
+        });
+    </script>
+   <!--Responive tabs-->
+   <!--Sorting-->
+   <link href="/assets/style.css" type="text/css" rel="stylesheet"/>
+   <script src="/assets/jquery.tablesorter.js" type="text/javascript"></script>
+   <script type="text/javascript">
+		$(function() {
+			$("table").tablesorter({debug: true});
+		});
+		</script>
+   <!--Sorting-->   
+</head>
+
+<body>
+<!--loader-->
+<div id="loader-wrapper">
+  <div id="loader"></div>
+  
+</div>
+<!--loader-->
+<div id="content">
+	<header class="headers-area">
+	<span class="logo"><a ><img src="/assets/main-logo.png" alt="logo"></a></span>
+    	<ul class="notification-bar">
+    		<li><a  ><i class="fa fa-cog"></i></a></li>
+            <li><a  ><i class="fa fa-envelope"></i></a></li>
+            <li><a  ><i class="fa fa-bell"></i></a></li>
+            <li></li>
+    	</ul>
+        
+     <div class="users-area">
+     	<span class="users-new"><i class="fa fa-user"></i>admin<i class="fa fa-caret-down"></i></span>
+        <ul class="dropdown-users">
+        	<li><a  ><i class="fa fa-user"></i>Dashboard</a></li>
+              <li><a  ><i class="fa fa-key"></i>Change Your Password</a></li>
+              <li><a  ><i class="fa fa-pencil-square-o"></i>Edit your Profile</a></li>
+ <li><a href="/logout"><i class="fa fa-key"></i>Logout</a></li>
+        </ul>
+     </div>
+        
+</header>
+
+</div>
+<!--content-area-->
+	<div class="content-area">
+    	<ul class="menu">
+        	<li>
+            	<a  ><i class="fa fa-tachometer"></i>Dashboard</a>
+                <ul>
+                	<li><a  >User</a></li>
+                    <li><a  >Admin</a></li>
+                </ul>
+            </li>
+            
+            <li>
+            	<a ><i class="fa fa-home"></i>Home</a>
+                <ul>
+                	<li><a  >Administrator</a></li>
+                    <li><a  >User List</a></li>
+                </ul>
+            </li>
+            
+            <li>
+            	<a ><i class="fa fa-user"></i>User</a>
+                <ul >
+                	<li><a href="/newparent">Register a New User</a></li>
+                    <li><a >Edit User Details</a></li>
+                    
+                </ul>
+            </li>
+             
+            <li>
+            	<a  ><i class="fa fa-inbox"></i>Email</a>
+                <ul>
+                	<li><a >Email Template</a></li>
+                </ul>
+            </li>
+            
+            <li>
+            	<a ><i class="fa fa-cog"></i>Setting</a>
+                <ul>
+                	<li><a >Site</a></li>
+                    <li><a >Amount</a></li>
+                    <li><a >Email</a></li>
+                </ul>
+            </li>
+            
+            <li>
+            	<a  ><i class="fa fa-cog"></i>Social Setting</a>
+                <ul>
+                	<li><a  >Facebook</a></li>
+                    <li><a  >Twitter</a></li>
+                    <li><a  >Linkedin</a></li>
+                    <li><a  >Google</a></li>
+
+                </ul>
+            </li>
+            
+            
+             <li>
+            	<a  ><i class="fa fa-list-alt"></i>Newsletters</a>
+                <ul>
+                    <li><a  >Newsletter Admin</a></li>
+
+                </ul>
+            </li>
+        </ul>
+ 		<div class="content-bg">
+        	<div class="content-right">
+              <div class="content-dash">
+                <% include ./Vulnerable/errors %>
+                <p>Smart Day Care Servillance</p>
+                <p><span class="general">Welcome <%= name %></span></p>
+              </div>
+              <ul class="breadgram">
+                <li><a  ><i class="fa fa-home"></i></a></li>
+                <li><a  >Dashboard</a></li>
+              </ul>
+<!--contimator-area-->
+              <div class="dash-users">
+                <ul class="users">
+                  <li>
+                    <div data-example="example9">
+                      <div class="counter counter-wheel counter-wheel-themed" 
+    data-decimals="0"
+    data-style="wheel"
+    data-max="1000"
+    data-value="11" 
+    data-pad="2" 
+    data-value-color="#8c6059" 
+    data-max-color="#e2e2e1" 
+    data-vertical-align="justify" 
+    data-line-width="10"> 
+                        <script type="text/x-handlebars-template">
+     <div class="counter-values"><i class="fa fa-user"></i>
+         <span class="counting" style="color: {{valueColor}}">{{count}}</span> 
+		 <!-- <span class="counter-separator"> % </span>-->
+       </div>
+     </div>
+    </script> 
+                      </div>
+                    </div>
+                    <div class="new-user"> <!--<span class="counting">0</span>--> <span class="user-text">New Users</span> </div>
+                  </li>
+                  <li>
+                    <div data-example="example9">
+                      <div class="counter counter-wheel counter-wheel-themed" 
+    data-decimals="0"
+    data-style="wheel"
+    data-max="1000"
+    data-value="4" 
+    data-pad="2" 
+    data-value-color="#006464" 
+    data-max-color="#e2e2e1" 
+    data-vertical-align="justify" 
+    data-line-width="10"> 
+                        <script type="text/x-handlebars-template">
+     <div>
+       <div class="counter-values"><i class="fa fa-thumb-tack"></i>
+         <span class="counting" style="color: {{valueColor}}">{{count}}</span> 
+		 <!-- <span class="counter-separator"> % </span>-->
+       </div>
+     </div>
+    </script> 
+                      </div>
+                    </div>
+                    <div class="new-user"> <!--<span class="counting">0</span>--> <span class="user-text">Pending Requests</span> </div>
+                  </li>
+                  <li>
+                    <div data-example="example9">
+                      <div class="counter counter-wheel counter-wheel-themed" 
+    data-decimals="0"
+    data-style="wheel"
+    data-max="1000"
+    data-value="4" 
+    data-pad="2" 
+    data-value-color="#a9987d" 
+    data-max-color="#e2e2e1" 
+    data-vertical-align="justify" 
+    data-line-width="10"> 
+                        <script type="text/x-handlebars-template">
+     <div>
+       <div class="counter-values"><i class="fa fa-check-circle"></i>
+         <span class="counting" style="color: {{valueColor}}">{{count}}</span> 
+		 <!-- <span class="counter-separator"> % </span>-->
+       </div>
+     </div>
+    </script></div>
+                    </div>
+                    <div class="new-user"> <!--<span class="counting">0</span>--> <span class="user-text">Online Users</span> </div>
+                  </li>
+                  <li>
+                    <div data-example="example9">
+                      <div class="counter counter-wheel counter-wheel-themed" 
+    data-decimals="0"
+    data-style="wheel"
+    data-max="1000"
+    data-value="2" 
+    data-pad="2" 
+    data-value-color="#235c87" 
+    data-max-color="#e2e2e1" 
+    data-vertical-align="justify" 
+    data-line-width="10"> 
+                        <script type="text/x-handlebars-template">
+     <div>
+       <div class="counter-values"><i class="fa fa-hand-o-right"></i>
+         <span class="counting" style="color: {{valueColor}}">{{count}}</span> 
+		 <!-- <span class="counter-separator"> % </span>-->
+       </div>
+     </div>
+  
+                  </li>
+                  <li>
+                    <div data-example="example9">
+                      <div class="counter counter-wheel counter-wheel-themed" 
+    data-decimals="0"
+    data-style="wheel"
+    data-max="1000"
+    data-value="9" 
+    data-pad="2" 
+    data-value-color="#b86256" 
+    data-max-color="#e2e2e1" 
+    data-vertical-align="justify" 
+    data-line-width="10"> 
+                        <script type="text/x-handlebars-template">
+     <div>
+       <div class="counter-values"><i class="fa fa-thumbs-o-close"></i>
+         <span class="counting" style="color: {{valueColor}}">{{count}}</span> 
+		 <!-- <span class="counter-separator"> % </span>-->
+       </div>
+     </div>
+    </script>
+                      </div>
+                    </div>
+                    <div class="new-user"> <!--<span class="counting">0</span>--> <span class="user-text">Blocked Accounts</span> </div>
+                  </li>
+                  <li>
+                    <div data-example="example9">
+                      <div class="counter counter-wheel counter-wheel-themed" 
+    data-decimals="0"
+    data-style="wheel"
+    data-max="5000000"
+    data-value="15000" 
+    data-pad="2" 
+    data-value-color="#646464" 
+    data-max-color="#e2e2e1" 
+    data-vertical-align="justify" 
+    data-line-width="10"> 
+                        <script type="text/x-handlebars-template">
+     <div>
+       <div class="counter-values"><i class="fa fa-money"></i>
+         <span class="counting" style="color: {{valueColor}}">{{count}}</span> 
+		 <!-- <span class="counter-separator"> % </span>-->
+       </div>
+     </div>
+    </script> 
+                      </div>
+                    </div>
+                    <div class="new-user"> <!--<span class="counting">0</span>--> <span class="user-text">Billing</span> </div>
+                  </li>
+                </ul>
+              </div>
+<!--contimator-area-->
+              <!--tabs-area-->
+              <!--table-->
+             
+                    	
+                       
+                        <div class="tabs-area-a">
+                    <p class="deshboad-text toggle_dropdown"><i class="fa fa-bars"></i> All Users Data</p>
+                        <div class="dashborad-table-area">
+                            <table class="dashbord-table tablesorter" id="rowspan">
+                                <tr>
+                                    <th class="numbers">No</th>
+                                    <th class="text">Username</th>
+                                    <th class="text">Email</th>
+                                    <th class="text">User Type</th>
+                                    <th class="text">Status</th>
+                              </tr>
+                                 <tr>
+                                    <td class="numbers">1</td>
+                                    <td>Muhammad Ameer Hamza</td>
+                                    <td>2016ee87@student.uet.edu.pk</td>
+                                    <td>Premium</td>
+                                    <td>0ffline</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numbers">2</td>
+                                    <td>Muhammad Ahmad Waseem</td>
+                                    <td>2016ee67@student.uet.edu.pk</td>
+                                    <td> Silver</td>
+                                    <td>Online</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numbers">3</td>
+                                    <td>Muhammad Hamza Sohail</td>
+                                    <td>2016ee92@student.uet.edu.pk</td>
+                                    <td>Premium</td>
+                                    <td>Online</td>
+                                 </tr>
+                                 <tr>
+                                    <td class="numbers">4</td>
+                                    <td>Maaz Mazhar</td>
+                                    <td>2016ee185@student.uet.edu.pk</td>
+                                    <td>Basic</td>
+                                    <td>Offline</td>
+                                 </tr>
+                            </table>
+                        </div>
+                    </div>
+                        
+                        <div class="tabs-area-a">
+                          <div class="dashborad-table-area">
+                            
+                          </div>
+                    </div>
+                    
+                    
+               		</div>
+             		<div id="tab-3">
+                  		<div class="tabs-area-a"></div>
+                        <div class="tabs-area-a">
+                          <div class="dashborad-table-area">
+                        <span class="records">No Record Found</span>
+                      </div>
+                    </div>
+               		</div>
+              	</div>
+                <!--tbs-area-->
+    </div><!--footer-area-->
+    <div class="footer-area"> <span class="running-project">Smart Day Care Servillance</span> <span class="copyright">©  2016fyp36 Electrical Engineering Dept. UET Lahore All rights reserved.</span> </div>
+
+    
+</body>
+</html>
