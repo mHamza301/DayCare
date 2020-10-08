@@ -1,0 +1,79 @@
+.counter.counter-wheel.counter-wheel-themed {
+	background-color: #660033;
+	color: #000;
+	width: 120px;
+	height: 120px;
+	font-size: 14px;
+	text-transform: uppercase;
+	margin: 0 auto;
+             }
+             
+             .counter.counter-wheel.counter-wheel-themed .counter-values {
+               font-size: 40px;
+               font-weight: bold;
+               line-height: 90px;
+             }
+             .users li:nth-child(2) .counter.counter-wheel.counter-wheel-themed .counter-values{
+				 color:#006464;
+			 }
+			 .users li:nth-child(3) .counter.counter-wheel.counter-wheel-themed .counter-values{
+				 color:#625893;
+			 }
+			 .users li:nth-child(4) .counter.counter-wheel.counter-wheel-themed .counter-values{
+				 color:#235c87;
+			 }
+			  .users li:nth-child(5) .counter.counter-wheel.counter-wheel-themed .counter-values{
+				 color:#b86256;
+			 }
+			 .users li:nth-child(6) .counter.counter-wheel.counter-wheel-themed .counter-values{
+				 color:#646464;
+			 }
+             .counter.counter-wheel.counter-wheel-themed .counter-separator {
+               margin: 0 2px 0 3px;
+             }
+             
+             .counter.counter-wheel.counter-wheel-themed .counter-body {
+               border-radius: 50%;
+             }
+
+
+.counter.counter-wheel {
+  width: 80px;
+  position: relative;
+  /*-moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -o-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  box-sizing: content-box;*/
+  color: #fff;
+  border-radius: 50%;
+  background-color: darkgray;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+}
+
+.counter.counter-wheel:before{
+  content: "";
+  display: block;
+  padding-top: 12%;  /* initial ratio of 1:1*/
+}
+
+.counter.counter-wheel .counter-body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  padding: 16px;
+}
+
+.counter.counter-wheel hr {
+  margin: 5px;
+  border-color: #fff;
+}
+.counting {
+	color:#646464 !important; 
+	font-size:25px;
+}
